@@ -20,7 +20,6 @@ func search_files(path string, files_ch chan string) {
 		if file.IsDir() {
 			search_files(path+"/"+file.Name(), files_ch)
 		} else {
-			fmt.Printf("Parent directory: %s\n", filepath.Dir(path+"/"+file.Name()))
 			files_ch <- path + "/" + file.Name()
 		}
 	}
