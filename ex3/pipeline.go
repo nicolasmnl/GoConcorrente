@@ -21,7 +21,6 @@ func search_files(path string, files_ch chan string) {
 			search_files(path+"/"+file.Name(), files_ch)
 		} else {
 			fmt.Printf("Parent directory: %s\n", filepath.Dir(path+"/"+file.Name()))
-			fmt.Printf("File %s is damaged\n", path+"/"+file.Name())
 			files_ch <- path + "/" + file.Name()
 		}
 	}
