@@ -42,7 +42,7 @@ func main() {
 	}
 
 	for i := 0; i < n; i++ {
-		go two_phase_sleep(channels[i], channels[(i+1)%n], join_ch, &barrier, i, i+1)
+		go two_phase_sleep(channels[i], channels[(i+1)%n], join_ch, &barrier, i, (i+1)%n)
 	}
 
 	for i := 0; i < n; i++ {
