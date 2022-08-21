@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"path/filepath"
+	"os"
 )
 
 func search_files(path string, files_ch chan string) {
@@ -42,7 +42,16 @@ func read_files(files_ch chan string) {
 
 func main() {
 
-	filepath := "./ex3/test_dir"
+	args := os.Args
+	if len(args) == 1 {
+		fmt.Println("É necessário passar a quantidade de GoRoutines a serem criadas")
+		fmt.Println("Ex.:: go run fork-sleep-join 10")
+		panic("Faltou o número de GoRoutines")
+	}
+	filepath := args[1]
+	// n, err := strconv.Atoi(args[1])
+
+	// filepath := "./ex3/test_dir"
 	files_ch := make(chan string)
 	go read_files(files_ch)
 	search_files(filepath, files_ch)
