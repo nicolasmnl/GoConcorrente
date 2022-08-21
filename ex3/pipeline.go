@@ -45,7 +45,7 @@ func main() {
 	args := os.Args
 	if len(args) == 1 {
 		fmt.Println("É necessário passar o caminho do diretório root a ser passado")
-		fmt.Println("Ex.:: go run fork-sleep-join teste_dir")
+		fmt.Println("Ex.:: go run pipeline teste_dir")
 		panic("Faltou o caminho do diretório root")
 	}
 	filepath := args[1]
