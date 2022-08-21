@@ -44,9 +44,9 @@ func main() {
 
 	args := os.Args
 	if len(args) == 1 {
-		fmt.Println("É necessário passar a quantidade de GoRoutines a serem criadas")
-		fmt.Println("Ex.:: go run fork-sleep-join 10")
-		panic("Faltou o número de GoRoutines")
+		fmt.Println("É necessário passar o caminho do diretório root a ser passado")
+		fmt.Println("Ex.:: go run fork-sleep-join teste_dir")
+		panic("Faltou o caminho do diretório root")
 	}
 	filepath := args[1]
 	// n, err := strconv.Atoi(args[1])

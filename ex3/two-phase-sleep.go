@@ -35,7 +35,7 @@ func main() {
 	args := os.Args
 	if len(args) == 1 {
 		fmt.Println("É necessário passar a quantidade de GoRoutines a serem criadas")
-		fmt.Println("Ex.:: go run fork-sleep-join 10")
+		fmt.Println("Ex.:: go run two_phase_sleep 10")
 		panic("Faltou o número de GoRoutines")
 	}
 	n, err := strconv.Atoi(args[1])
