@@ -36,11 +36,9 @@ func handle(nServers int, itemsCh <-chan string, timeoutSecs int) chan Bid {
 				timerCh := time.Tick(time.Duration(timeoutSecs) * time.Second)
 				select {
 				case bidCh <- bid(item):
-					bidCh <- bid(item)
 				case <-timerCh:
 					bidCh <- Bid{item, -1, true}
 				}
-				// bidCh <- bid(item)
 			}
 			joinCh <- 1
 
